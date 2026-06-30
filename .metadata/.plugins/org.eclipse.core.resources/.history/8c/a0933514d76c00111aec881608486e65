@@ -1,0 +1,15 @@
+server.port=8080
+spring.application.name=api-gateway
+
+# Eureka Registration
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+
+# Dynamic Routing Configuration
+spring.cloud.gateway.routes[0].id=service-a-route
+spring.cloud.gateway.routes[0].uri=lb://SERVICE-A
+spring.cloud.gateway.routes[0].predicates[0]=Path=/service-a/**
+
+spring.cloud.gateway.routes[1].id=service-b-route
+spring.cloud.gateway.routes[1].uri=lb://SERVICE-B
+spring.cloud.gateway.routes[1].predicates[0]=Path=/service-b/**

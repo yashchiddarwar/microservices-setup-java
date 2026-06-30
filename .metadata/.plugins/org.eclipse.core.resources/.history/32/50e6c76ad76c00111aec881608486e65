@@ -1,0 +1,18 @@
+server.port=8081
+spring.application.name=service-a
+
+
+# Eureka Registration
+eureka.client.enabled=true
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+server.servlet.context-path=/
+
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+eureka.instance.lease-renewal-interval-in-seconds=5
+eureka.instance.lease-expiration-duration-in-seconds=10
+eureka.instance.hostname=brakeapi.ltfinance.com
+eureka.instance.statusPageUrlPath=${server.servlet.context-path}/eureka-registry/info
+eureka.instance.healthCheckUrlPath=${server.servlet.context-path}/eureka-registry/health
+eureka.instance.homePageUrlPath=${server.servlet.context-path}/
